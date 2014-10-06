@@ -19,7 +19,7 @@ public class MyController {
     
     @RequestMapping("/home")
     public ModelAndView home() {
-        
+        // sss
         logger.debug("MyController.home()");
         
         return new ModelAndView("home");
