@@ -13,6 +13,6 @@ import pl.altkom.gemalto.spring.model.User;
  *
  * @author lkozlows
  */
-public interface UserRepository extends JpaRepository<Long, User>{
+public interface UserRepository extends JpaRepository<User, Long>{
     
 }
