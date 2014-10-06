@@ -6,6 +6,8 @@
 package pl.altkom.gemalto.spring.model;
 
 import javax.persistence.Entity;
+import javax.validation.constraints.Size;
+import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  *
@@ -16,7 +18,10 @@ public class InvoiceItem extends BaseEntity {
     private long InvoiceId;
     private float priceNet;
     private float priceGross;
+    @Size(max = 128)
+    @NotEmpty
     private String name;
+    @Size(max = 128)
     private String description;
 
     public long getInvoiceId() {
