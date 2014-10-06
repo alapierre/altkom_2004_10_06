@@ -24,6 +24,7 @@ public class Main {
         System.out.println(res.getName());
         System.out.println(res.getNip());
         System.out.println(res.getId());
+        
     }
 
 }
