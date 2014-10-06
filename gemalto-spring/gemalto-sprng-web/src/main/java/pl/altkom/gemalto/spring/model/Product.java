@@ -5,33 +5,28 @@
  */
 package pl.altkom.gemalto.spring.model;
 
-import java.io.Serializable;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  *
- * @author Student
+ * @author adrzewiecki
  */
 @Entity
-public class Customer extends BaseEntity {
+@SuppressWarnings("PersistenceUnitPresent")
+public class Product extends BaseEntity {
 
     @Size(max = 128)
     @NotEmpty
     private String name;
-    
-    @Size(max = 32)
-    @NotEmpty
-    private String nip;
 
-    @Override
-    public String toString() {
-        return name;
-    }
+    @NotEmpty
+    private Double price;
+
+    @Size(max = 20)
+    @NotEmpty
+    private String code;
 
     public String getName() {
         return name;
@@ -41,12 +36,19 @@ public class Customer extends BaseEntity {
         this.name = name;
     }
 
-    public String getNip() {
-        return nip;
+    public Double getPrice() {
+        return price;
     }
 
-    public void setNip(String nip) {
-        this.nip = nip;
+    public void setPrice(Double price) {
+        this.price = price;
     }
-    
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
 }
