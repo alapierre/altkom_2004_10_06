@@ -6,18 +6,26 @@
 package pl.altkom.gemalto.spring.model;
 
 import javax.persistence.Entity;
+import javax.validation.constraints.Size;
+import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  *
  * @author adrzewiecki
  */
 @Entity
-public class Product extends BaseEntity{
+@SuppressWarnings("PersistenceUnitPresent")
+public class Product extends BaseEntity {
 
+    @Size(max = 128)
+    @NotEmpty
     private String name;
 
+    @NotEmpty
     private Double price;
 
+    @Size(max = 20)
+    @NotEmpty
     private String code;
 
     public String getName() {
