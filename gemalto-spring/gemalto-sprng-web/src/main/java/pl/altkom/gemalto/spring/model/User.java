@@ -6,6 +6,7 @@
 package pl.altkom.gemalto.spring.model;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -16,6 +17,7 @@ import org.hibernate.validator.constraints.NotEmpty;
  */
 @Entity
 @SuppressWarnings("PersistenceUnitPresent")
+@Table(name = "uses")
 public class User extends BaseEntity {
 
     @Size(max = 128)
