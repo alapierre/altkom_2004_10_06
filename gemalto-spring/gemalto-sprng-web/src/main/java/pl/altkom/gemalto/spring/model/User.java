@@ -5,15 +5,30 @@
  */
 package pl.altkom.gemalto.spring.model;
 
+import javax.persistence.Entity;
+import javax.validation.constraints.Size;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+
 /**
  *
  * @author lkozlows
  */
-public class User {
-    public String userName;
-    public String userEmail;
-    public String userLogin;
-    public String userPassword;
+@Entity
+@SuppressWarnings("PersistenceUnitPresent")
+public class User extends BaseEntity {
+
+    @Size(max = 128)
+    @NotEmpty
+    private String userName;
+    @Email
+    private String userEmail;
+    @Size(max = 32)
+    @NotEmpty
+    private String userLogin;
+    @Size(max = 32)
+    @NotEmpty
+    private String userPassword;
 
     public String getUserName() {
         return userName;
@@ -46,5 +61,5 @@ public class User {
     public void setUserPassword(String userPassword) {
         this.userPassword = userPassword;
     }
-    
+
 }
