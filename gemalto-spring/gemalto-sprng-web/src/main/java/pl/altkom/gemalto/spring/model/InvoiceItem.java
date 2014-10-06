@@ -15,6 +15,7 @@ import org.hibernate.validator.constraints.NotEmpty;
  */
 @Entity
 public class InvoiceItem extends BaseEntity {
+    
     private long InvoiceId;
     private float priceNet;
     private float priceGross;

@@ -5,6 +5,7 @@
  */
 package pl.altkom.gemalto.spring.model;
 
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -13,8 +14,8 @@ import org.hibernate.validator.constraints.NotEmpty;
  *
  * @author esiedlecki
  */
-@Entity 
-public class Address extends BaseEntity{
+@Embeddable 
+public class Address{
     
     @Size(max = 128)
     @NotEmpty
@@ -24,7 +25,7 @@ public class Address extends BaseEntity{
     private String town;
     @Size(max = 8)
     @NotEmpty
-    private String postal_code;
+    private String postalCode;
     
      public void setStreet(String street) {
         this.street = street;
@@ -33,11 +34,15 @@ public class Address extends BaseEntity{
     public void setTown(String town) {
         this.town = town;
     }
-          
-    public void setPostal_code(String PC) {
-        this.postal_code = PC;
+
+    public String getPostalCode() {
+        return postalCode;
     }
 
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
+    }
+    
     public String getStreet() {
         return street;
     }
@@ -46,7 +51,11 @@ public class Address extends BaseEntity{
         return town;
     }
 
-    public String getPostal_code() {
-        return postal_code;
+    @Override
+    public String toString() {
+        return "Address{" + "street=" + street + ", town=" + town + ", postalCode=" + postalCode + '}';
     }
+
+    
+    
 }

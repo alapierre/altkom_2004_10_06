@@ -4,6 +4,7 @@
  */
 package pl.altkom.gemalto.spring.model;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -24,6 +25,9 @@ public class Seller extends BaseEntity {
     @Size(max = 32)
     @NotEmpty
     private String nip;
+    
+    @Embedded()
+    private Address address;
 
     public void setName(String name) {
         this.name = name;
