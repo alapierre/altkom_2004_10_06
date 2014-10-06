@@ -23,7 +23,6 @@ public class Invoice extends BaseEntity {
     private static final long serialVersionUID = 1L;
     
     private BigDecimal totalSumNet;
-    
     private BigDecimal totalSumGross;
 
     public BigDecimal getTotalSumNet() {

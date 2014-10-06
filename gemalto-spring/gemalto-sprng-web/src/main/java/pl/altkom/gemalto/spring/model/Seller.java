@@ -4,15 +4,25 @@
  */
 package pl.altkom.gemalto.spring.model;
 
-import java.util.logging.Logger;
+import javax.persistence.Entity;
+import javax.validation.constraints.Size;
+import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  *
  * @author mmierzyn
  */
-public class Seller {
+@Entity
+@SuppressWarnings("PersistenceUnitPresent")
+public class Seller extends BaseEntity {
+    
+    @Size(max = 128)
+    @NotEmpty
     private String name;
+    @Size(max = 64)
     private String phoneNumber;
+    @Size(max = 32)
+    @NotEmpty
     private String nip;
 
     public void setName(String name) {
