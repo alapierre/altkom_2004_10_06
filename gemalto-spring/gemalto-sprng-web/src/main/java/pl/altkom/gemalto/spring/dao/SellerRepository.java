@@ -12,6 +12,6 @@ import pl.altkom.gemalto.spring.model.Seller;
  *
  * @author mmierzyn
  */
-public interface SellerRepository extends JpaRepository<Long, Seller>{
+public interface SellerRepository extends JpaRepository<Seller, Long>{
     
 }
