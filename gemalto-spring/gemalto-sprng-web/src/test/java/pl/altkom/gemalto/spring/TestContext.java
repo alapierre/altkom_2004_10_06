@@ -11,12 +11,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
+import org.springframework.test.context.transaction.TransactionConfiguration;
 import pl.altkom.gemalto.spring.dao.InvoiceRepository;
 
 /**
  *
  */
 @ContextConfiguration("/gemalto-sprng-web-core.xml")
+@TransactionConfiguration(defaultRollback = false)
 public class TestContext extends AbstractTransactionalJUnit4SpringContextTests {
     
     @Autowired
