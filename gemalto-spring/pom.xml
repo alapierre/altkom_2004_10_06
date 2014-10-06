@@ -10,6 +10,7 @@
     </properties>
     <modules>
         <module>gemalto-sprng-web</module>
+        <module>ws-client</module>
     </modules>
     
 </project>
