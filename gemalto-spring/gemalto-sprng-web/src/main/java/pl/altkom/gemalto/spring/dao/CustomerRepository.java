@@ -12,6 +12,6 @@ import pl.altkom.gemalto.spring.model.Customer;
  *
  * @author Student
  */
-public interface CustomerRepository extends JpaRepository<Long, Customer>{
+public interface CustomerRepository extends JpaRepository<Customer, Long>{
     
 }
