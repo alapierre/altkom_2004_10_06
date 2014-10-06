@@ -16,7 +16,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 @Entity
 public class InvoiceItem extends BaseEntity {
     
-    private long InvoiceId;
+    
     private float priceNet;
     private float priceGross;
     @Size(max = 128)
@@ -25,13 +25,7 @@ public class InvoiceItem extends BaseEntity {
     @Size(max = 128)
     private String description;
 
-    public long getInvoiceId() {
-        return InvoiceId;
-    }
-
-    public void setInvoiceId(long InvoiceId) {
-        this.InvoiceId = InvoiceId;
-    }
+    
 
     public float getPriceNet() {
         return priceNet;

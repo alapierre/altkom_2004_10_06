@@ -5,6 +5,7 @@
  */
 package pl.altkom.gemalto.spring.model;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -25,6 +26,9 @@ public class Customer extends BaseEntity {
     @NotEmpty
     private String nip;
 
+    @Embedded
+    private Address address;
+    
     @Override
     public String toString() {
         return name;

@@ -17,7 +17,7 @@ import org.hibernate.validator.constraints.NotEmpty;
  */
 @Entity
 @SuppressWarnings("PersistenceUnitPresent")
-@Table(name = "uses")
+@Table(name = "users")
 public class User extends BaseEntity {
 
     @Size(max = 128)

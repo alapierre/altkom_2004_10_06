@@ -48,6 +48,13 @@
         <property name="dataSource" ref="dataSource" />
         <property name="packagesToScan" value="pl.altkom.gemalto.spring.model" />
 
+        <property name="jpaProperties">
+            <props>
+<!--                <prop key="hibernate.hbm2ddl.auto">create</prop>-->
+                <prop key="hibernate.format_sql">true</prop>
+            </props>
+        </property>
+        
         <property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
                 <property name="database" value="DERBY" />

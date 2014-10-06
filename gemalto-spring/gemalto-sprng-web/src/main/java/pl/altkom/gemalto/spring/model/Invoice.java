@@ -7,7 +7,10 @@
 package pl.altkom.gemalto.spring.model;
 
 import java.math.BigDecimal;
+import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 /**
@@ -27,6 +30,10 @@ public class Invoice extends BaseEntity {
     @OneToOne
     private Seller seller;
 
+    @OneToMany
+    @JoinColumn(name = "invoice_id")
+    private List<InvoiceItem> invoiceItems;
+    
     public Customer getCustomer() {
         return customer;
     }
