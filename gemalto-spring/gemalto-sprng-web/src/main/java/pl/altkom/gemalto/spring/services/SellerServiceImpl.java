@@ -14,10 +14,11 @@ import pl.altkom.gemalto.spring.model.Seller;
  * @author mmierzyn
  */
 @Service
-public class SellerServiceImpl {
+public class SellerServiceImpl implements SellerService{
     @Autowired
     private SellerRepository sellerRepository;
     
+    @Override
     public void create (Seller seller){
         sellerRepository.save(seller);
     }
