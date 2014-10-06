@@ -6,6 +6,8 @@
 package pl.altkom.gemalto.spring.model;
 
 import javax.persistence.Entity;
+import javax.validation.constraints.Size;
+import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  *
@@ -14,8 +16,14 @@ import javax.persistence.Entity;
 @Entity 
 public class Address extends BaseEntity{
     
+    @Size(max = 128)
+    @NotEmpty
     private String street;
+    @Size(max = 128)
+    @NotEmpty
     private String town;
+    @Size(max = 8)
+    @NotEmpty
     private String postal_code;
     
      public void setStreet(String street) {
