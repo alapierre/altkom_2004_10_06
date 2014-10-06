@@ -13,6 +13,6 @@ import pl.altkom.gemalto.spring.model.Invoice;
  *
  * @author Student
  */
-public interface InvoiceRepository extends JpaRepository<Long, Invoice> {
+public interface InvoiceRepository extends JpaRepository<Invoice, Long> {
     
 }

@@ -7,9 +7,11 @@
 package pl.altkom.gemalto.spring;
 
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
+import pl.altkom.gemalto.spring.dao.InvoiceRepository;
 
 /**
  *
@@ -17,9 +19,15 @@ import org.springframework.test.context.junit4.AbstractTransactionalJUnit4Spring
 @ContextConfiguration("/gemalto-sprng-web-core.xml")
 public class TestContext extends AbstractTransactionalJUnit4SpringContextTests {
     
+    @Autowired
+    private InvoiceRepository invoiceRepository;
+    
     @Test
     public void test() {
         System.out.println("!!!");
+        
+        invoiceRepository.findAll();
+        
     }
     
 }
