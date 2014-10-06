@@ -10,17 +10,22 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
+import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  *
  * @author Student
  */
 @Entity
-public class Customer extends BaseEntity implements Serializable {
-    private static final long serialVersionUID = 1L;
+public class Customer extends BaseEntity {
 
+    @Size(max = 128)
+    @NotEmpty
     private String name;
     
+    @Size(max = 32)
+    @NotEmpty
     private String nip;
 
     @Override
@@ -43,7 +48,5 @@ public class Customer extends BaseEntity implements Serializable {
     public void setNip(String nip) {
         this.nip = nip;
     }
-    
-    
     
 }
