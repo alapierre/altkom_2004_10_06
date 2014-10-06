@@ -5,13 +5,14 @@
  */
 package pl.altkom.gemalto.spring.dao;
 
+import java.io.Serializable;
 import org.springframework.data.jpa.repository.JpaRepository;
-import pl.altkom.gemalto.spring.model.Customer;
+import pl.altkom.gemalto.spring.model.User;
 
 /**
  *
- * @author Student
+ * @author lkozlows
  */
-public interface CustomerRepository extends JpaRepository<Customer, Long>{
+public interface UserRepository extends JpaRepository<User, Long>{
     
 }
