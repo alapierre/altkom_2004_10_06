@@ -34,8 +34,8 @@ public class Address extends BaseEntity{
         this.town = town;
     }
           
-    public void setPostal_code(String PC) {
-        this.postal_code = PC;
+    public void setPostal_code(String postal_code) {
+        this.postal_code = postal_code;
     }
 
     public String getStreet() {

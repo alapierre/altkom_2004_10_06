@@ -14,12 +14,13 @@ import org.hibernate.validator.constraints.NotEmpty;
  * @author Student
  */
 @Entity
+@SuppressWarnings("PersistenceUnitPresent")
 public class Customer extends BaseEntity {
 
     @Size(max = 128)
     @NotEmpty
     private String name;
-    
+
     @Size(max = 32)
     @NotEmpty
     private String nip;
@@ -44,5 +45,5 @@ public class Customer extends BaseEntity {
     public void setNip(String nip) {
         this.nip = nip;
     }
-    
+
 }
