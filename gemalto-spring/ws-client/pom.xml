@@ -22,12 +22,12 @@
                         </goals>
                         <configuration>                            
                             <wsdlUrls>
-                                <wsdlUrl>http://localhost:8084/gemalto-sprng-web/ws/HelloWorld?wsdl</wsdlUrl>
+                                <wsdlUrl>http://localhost:8084/gemalto-sprng-web/ws/CrmService?wsdl</wsdlUrl>
                             </wsdlUrls>
                             <!--wsdlFiles>
                                 <wsdlFile>localhost_8084/spring-ws/services/HelloWorld.wsdl</wsdlFile>
                             </wsdlFiles-->
-                            <staleFile>${project.build.directory}/jaxws/stale/HelloWorld.stale</staleFile>
+                            <staleFile>${project.build.directory}/jaxws/stale/CrmService.stale</staleFile>
                         </configuration>
                         <id>wsimport-generate-HelloWorld</id>
                         <phase>generate-sources</phase>

@@ -4,18 +4,19 @@
  * and open the template in the editor.
  */
 
-package pl.altkom.gemalto.spring.services;
+package pl.altkom.gemalto.spring.ws;
 
+import javax.jws.WebParam;
+import javax.jws.WebService;
 import pl.altkom.gemalto.spring.model.Customer;
 
 /**
  *
  * @author admin
  */
-public interface CustomerService {
+@WebService
+public interface CrmWebService {
 
-    void create(Customer customer);
-
-    Customer loadById(long id);
+    Customer loadById(@WebParam(name = "id") long id);
     
 }

@@ -42,6 +42,9 @@
     
     <jaxws:endpoint id="helloWorld" implementor="pl.altkom.gemalto.spring.ws.HelloServiceImpl" 
                     address="/HelloWorld"/>
+    
+    <jaxws:endpoint id="crmWS" implementor="pl.altkom.gemalto.spring.ws.CrmWebServiceImpl" 
+                    address="/CrmService"/>
 
     <!-- Data source -->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">

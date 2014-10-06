@@ -21,6 +21,9 @@ public class CustomerServiceImpl implements CustomerService {
     @Autowired
     private CustomerRepository customerRepository;
     
+    public Customer loadById(long id) {
+        return customerRepository.findOne(id);
+    }
     
     @Override
     public void create(Customer customer) {
