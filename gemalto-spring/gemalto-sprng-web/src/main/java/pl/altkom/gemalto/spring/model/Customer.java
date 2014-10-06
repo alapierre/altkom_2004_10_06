@@ -50,4 +50,14 @@ public class Customer extends BaseEntity {
         this.nip = nip;
     }
 
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+    
+    
+
 }
