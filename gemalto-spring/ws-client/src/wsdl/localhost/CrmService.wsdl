@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ws.spring.gemalto.altkom.pl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="CrmWebServiceImplService" targetNamespace="http://ws.spring.gemalto.altkom.pl/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ws.spring.gemalto.altkom.pl/" elementFormDefault="unqualified" targetNamespace="http://ws.spring.gemalto.altkom.pl/" version="1.0">
+
+  <xs:element name="loadById" type="tns:loadById"/>
+
+  <xs:element name="loadByIdResponse" type="tns:loadByIdResponse"/>
+
+  <xs:complexType name="loadById">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="loadByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:customer"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="customer">
+    <xs:complexContent>
+      <xs:extension base="tns:baseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="address" type="tns:address"/>
+          <xs:element minOccurs="0" name="name" type="xs:string"/>
+          <xs:element minOccurs="0" name="nip" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="baseEntity">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="address">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="postalCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="street" type="xs:string"/>
+      <xs:element minOccurs="0" name="town" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="loadById">
+    <wsdl:part element="tns:loadById" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="loadByIdResponse">
+    <wsdl:part element="tns:loadByIdResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="CrmWebService">
+    <wsdl:operation name="loadById">
+      <wsdl:input message="tns:loadById" name="loadById">
+    </wsdl:input>
+      <wsdl:output message="tns:loadByIdResponse" name="loadByIdResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CrmWebServiceImplServiceSoapBinding" type="tns:CrmWebService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="loadById">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="loadById">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="loadByIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CrmWebServiceImplService">
+    <wsdl:port binding="tns:CrmWebServiceImplServiceSoapBinding" name="CrmWebServiceImplPort">
+      <soap:address location="http://localhost:8084/gemalto-sprng-web/ws/CrmService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
