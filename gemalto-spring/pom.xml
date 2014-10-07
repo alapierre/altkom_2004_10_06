@@ -13,6 +13,7 @@
         <module>ws-client</module>
         <module>spring-aspect</module>
         <module>spring-security-acl</module>
+        <module>jaxb</module>
     </modules>
     
 </project>
