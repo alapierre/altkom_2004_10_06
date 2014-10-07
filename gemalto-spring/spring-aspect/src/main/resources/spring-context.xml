@@ -21,14 +21,19 @@
     <aop:config>
 <!--        <aop:aspect ref="aspect">
             <aop:before method="interceptBefore" pointcut="bean(targetBean)" />
-        </aop:aspect>-->
-        <aop:aspect ref="interceptor">
-            <aop:around method="intercept" pointcut="bean(targetBean)"/>
         </aop:aspect>
         
-        <!--aop:aspect ref="interceptor">
+        <aop:aspect ref="aspect">
+            <aop:after method="interceptAfter" pointcut="bean(targetBean)" />
+        </aop:aspect>
+        
+        <aop:aspect ref="interceptor">
+            <aop:around method="intercept" pointcut="bean(targetBean)"/>
+        </aop:aspect>-->
+        
+        <aop:aspect ref="interceptor">
             <aop:around method="intercept" pointcut="execution (public * pl.com.softproject.springtestaltkom.springaspect.TargetBean.method2 (..))"/>
-        </aop:aspect-->
+        </aop:aspect>
         
     </aop:config>
 

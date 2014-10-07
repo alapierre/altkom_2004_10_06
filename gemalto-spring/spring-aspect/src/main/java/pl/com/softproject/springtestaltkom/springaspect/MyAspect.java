@@ -16,7 +16,11 @@ public class MyAspect {
         System.out.println("!!!!! " + joinPoint.getSignature());
         System.out.println(Arrays.toString(joinPoint.getArgs()));
         
+    }
+    
+    public void interceptAfter(JoinPoint joinPoint) {
         
+        System.out.println("after " );
         
     }
     
