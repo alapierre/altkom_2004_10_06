@@ -5,6 +5,7 @@
  */
 package pl.altkom.gemalto.spring.ws.client;
 
+import java.net.Authenticator;
 import pl.altkom.gemalto.spring.ws.CrmWebServiceImplService;
 import pl.altkom.gemalto.spring.ws.Customer;
 
@@ -18,6 +19,9 @@ public class Main {
 
     public static void main(String[] args) {
 
+        Authenticator.setDefault(new WSAuthenticator());
+        
+        
         CrmWebServiceImplService service = new CrmWebServiceImplService();
         Customer res = service.getCrmWebServiceImplPort().loadById(1);
         
