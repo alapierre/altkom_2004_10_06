@@ -12,6 +12,7 @@
         <module>gemalto-sprng-web</module>
         <module>ws-client</module>
         <module>spring-aspect</module>
+        <module>spring-security-acl</module>
     </modules>
     
 </project>
