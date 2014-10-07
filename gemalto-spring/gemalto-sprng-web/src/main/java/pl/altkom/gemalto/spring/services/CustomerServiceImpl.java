@@ -7,6 +7,7 @@
 package pl.altkom.gemalto.spring.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Service;
 import pl.altkom.gemalto.spring.dao.CustomerRepository;
 import pl.altkom.gemalto.spring.model.Customer;
@@ -21,6 +22,7 @@ public class CustomerServiceImpl implements CustomerService {
     @Autowired
     private CustomerRepository customerRepository;
     
+    @Secured("ROLE_ADMIN")
     public Customer loadById(long id) {
         return customerRepository.findOne(id);
     }

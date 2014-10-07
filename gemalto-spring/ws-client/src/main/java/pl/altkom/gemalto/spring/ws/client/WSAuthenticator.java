@@ -20,7 +20,7 @@ public class WSAuthenticator extends Authenticator {
         System.out.println("trying to auth...");
         
         //"admin", "test.112"
-        PasswordAuthentication pass = new PasswordAuthentication("user", "user".toCharArray());
+        PasswordAuthentication pass = new PasswordAuthentication("admin", "test.11".toCharArray());
         
         return pass;
     }

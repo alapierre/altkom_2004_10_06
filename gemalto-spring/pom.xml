@@ -11,6 +11,7 @@
     <modules>
         <module>gemalto-sprng-web</module>
         <module>ws-client</module>
+        <module>spring-aspect</module>
     </modules>
     
 </project>
