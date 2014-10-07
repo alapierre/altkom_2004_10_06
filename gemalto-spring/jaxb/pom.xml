@@ -24,6 +24,9 @@
             </resource>
         </resources>
         <plugins>          
+            
+    <!-- alternatynie https://java.net/projects/maven-jaxb2-plugin/pages/Home -->
+            
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>jaxb2-maven-plugin</artifactId>
