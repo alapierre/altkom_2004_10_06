@@ -40,6 +40,18 @@ public class User extends BaseEntity {
     @Column(name = "password")
     private String userPassword;
 
+    private boolean enabled;
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+    
+    
+    
     public String getName() {
         return name;
     }
