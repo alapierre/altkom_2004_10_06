@@ -5,6 +5,7 @@
  */
 package pl.altkom.gemalto.spring.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
@@ -22,19 +23,40 @@ public class User extends BaseEntity {
 
     @Size(max = 128)
     @NotEmpty
-    private String userName;
+    private String name;
+    
+    @Size(max = 128)
+    @NotEmpty
+    private String lastName;
+    
     @Email
     private String userEmail;
     @Size(max = 32)
     @NotEmpty
+    @Column(name = "username", unique = true)
     private String userLogin;
     @Size(max = 32)
     @NotEmpty
+    @Column(name = "password")
     private String userPassword;
 
-    public String getUserName() {
-        return userName;
+    public String getName() {
+        return name;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+   
 
     public String getUserEmail() {
         return userEmail;
@@ -48,9 +70,7 @@ public class User extends BaseEntity {
         return userPassword;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
+    
 
     public void setUserEmail(String userEmail) {
         this.userEmail = userEmail;

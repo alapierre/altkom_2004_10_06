@@ -28,7 +28,7 @@ public class TestContext extends AbstractTransactionalJUnit4SpringContextTests {
     public void test() {
         System.out.println("!!!");
         
-        invoiceRepository.findAll();
+        //invoiceRepository.findAll();
         
     }
     
