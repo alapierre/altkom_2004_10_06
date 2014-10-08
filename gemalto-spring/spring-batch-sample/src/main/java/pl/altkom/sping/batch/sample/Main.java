@@ -21,16 +21,17 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Main {
     
     public static void main(String[] args) {
-        
+        //"batch-task_customer_to_db.xml",
         String[] springConfig  = 
 		{	
-			"batch-task_customer_to_db.xml" 
+			"batch-task_customer_to_db.xml",
+                        "batch-persistance.xml"
 		};
  
 	ApplicationContext context = 
 			new ClassPathXmlApplicationContext(springConfig);
         
-        runTask(context);
+        //runTask(context);
         
  
 	System.out.println("task scheduler started");
