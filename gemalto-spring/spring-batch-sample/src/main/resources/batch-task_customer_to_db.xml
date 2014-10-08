@@ -20,11 +20,11 @@
     <import resource="classpath:database.xml" />
     <context:annotation-config/>
     
-    <task:scheduler id="scheduler" pool-size="10"/>
+<!--    <task:scheduler id="scheduler" pool-size="10"/>
     
     <task:scheduled-tasks scheduler="scheduler">
         <task:scheduled ref="fileListener" method="checkFilesExist" cron="0/10 * * * * *"/>
-    </task:scheduled-tasks>
+    </task:scheduled-tasks>-->
     
     <bean id="helloService" class="pl.altkom.sping.batch.sample.HelloServiceImpl"></bean>
     
@@ -122,10 +122,12 @@
         
     </bean>
     
+    <bean id="customerItemProcessor" class="pl.altkom.sping.batch.sample.processor.CustomerItemProcessor"></bean>
+    
     <batch:job id="exportCustomers" >
         <batch:step id="export_step1" allow-start-if-complete="true" >
             <batch:tasklet>
-                <batch:chunk reader="customerJdbcItemReader" writer="xmlItemWriter" 
+                <batch:chunk reader="customerJdbcItemReader" writer="xmlItemWriter" processor="customerItemProcessor"
                              commit-interval="10">
                 </batch:chunk>
             </batch:tasklet>

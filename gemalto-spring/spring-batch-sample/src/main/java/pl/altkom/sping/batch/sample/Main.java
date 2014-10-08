@@ -24,6 +24,7 @@ public class Main {
         //"batch-task_customer_to_db.xml",
         String[] springConfig  = 
 		{	
+                        //"batch-persistance.xml",
 			"batch-task_customer_to_db.xml",
                         
 		};
@@ -31,7 +32,7 @@ public class Main {
 	ApplicationContext context = 
 			new ClassPathXmlApplicationContext(springConfig);
         
-        //runTask(context);
+        runTask(context);
         
  
 	System.out.println("task scheduler started");
