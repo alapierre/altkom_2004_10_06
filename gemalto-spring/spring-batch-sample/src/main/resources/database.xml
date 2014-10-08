@@ -20,9 +20,9 @@
               class="org.springframework.batch.support.transaction.ResourcelessTransactionManager" />
  
     <!-- create job-meta tables automatically -->
-    	<jdbc:initialize-database data-source="dataSource">
+<!--    	<jdbc:initialize-database data-source="dataSource">-->
 <!--    		<jdbc:script location="org/springframework/batch/core/schema-drop-derby.sql" />-->
-    		<jdbc:script location="org/springframework/batch/core/schema-derby.sql" />
-    	</jdbc:initialize-database>
+<!--    		<jdbc:script location="org/springframework/batch/core/schema-derby.sql" />-->
+<!--    	</jdbc:initialize-database>-->
     
 </beans>
