@@ -43,7 +43,7 @@ public class Main {
 
     private static void runTask(ApplicationContext context) throws BeansException {
         JobLauncher jobLauncher = (JobLauncher) context.getBean("jobLauncher");
-        Job job = (Job) context.getBean("importCustomers");
+        Job job = (Job) context.getBean("exportCustomers");
         
         try {
             

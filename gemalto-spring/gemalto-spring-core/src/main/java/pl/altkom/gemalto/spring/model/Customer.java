@@ -8,6 +8,7 @@ package pl.altkom.gemalto.spring.model;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
 import org.hibernate.validator.constraints.NotEmpty;
 
 /**
@@ -16,6 +17,7 @@ import org.hibernate.validator.constraints.NotEmpty;
  */
 @Entity
 @SuppressWarnings("PersistenceUnitPresent")
+@XmlRootElement
 public class Customer extends BaseEntity {
 
     @Size(max = 128)
