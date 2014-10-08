@@ -25,7 +25,7 @@ public class Main {
         String[] springConfig  = 
 		{	
 			"batch-task_customer_to_db.xml",
-                        "batch-persistance.xml"
+                        
 		};
  
 	ApplicationContext context = 
