@@ -15,6 +15,7 @@
         <module>spring-security-acl</module>
         <module>jaxb</module>
         <module>spring-batch-sample</module>
+        <module>gemalto-spring-core</module>
     </modules>
     
 </project>

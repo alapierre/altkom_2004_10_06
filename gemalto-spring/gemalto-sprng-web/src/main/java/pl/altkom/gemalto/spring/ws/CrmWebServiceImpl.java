@@ -15,7 +15,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import pl.altkom.gemalto.spring.model.Customer;
-import pl.altkom.gemalto.spring.services.CustomerService;
+import pl.altkom.gemalto.spring.service.CustomerService;
 
 /**
  *

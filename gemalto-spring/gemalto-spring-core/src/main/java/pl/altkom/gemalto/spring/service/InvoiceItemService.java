@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pl.altkom.gemalto.spring.services;
+package pl.altkom.gemalto.spring.service;
 
 import pl.altkom.gemalto.spring.dao.InvoiceItemRepository;
 import pl.altkom.gemalto.spring.model.InvoiceItem;
