@@ -5,12 +5,14 @@
  */
 package pl.altkom.sping.batch.sample.model;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  *
  * @author Student
  */
 
-
+@XmlRootElement(name = "record")
 public class Customer  {
     
     private String name;

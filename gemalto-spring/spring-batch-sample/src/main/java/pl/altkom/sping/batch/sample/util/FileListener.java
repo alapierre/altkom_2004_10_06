@@ -8,10 +8,14 @@ package pl.altkom.sping.batch.sample.util;
 
 import java.io.File;
 import java.nio.file.Files;
+import java.util.HashMap;
+import java.util.Map;
 import org.apache.log4j.Logger;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobExecution;
+import org.springframework.batch.core.JobParameter;
 import org.springframework.batch.core.JobParameters;
+import org.springframework.batch.core.JobParametersBuilder;
 import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -41,8 +45,10 @@ public class FileListener {
         if(files.length != 0) {
             for(File f : files) {
                 System.out.println(f);
+                executeTask(f);
+                f.delete();
             }
-            executeTask();
+            
             return true;
         }
         
@@ -57,10 +63,19 @@ public class FileListener {
         this.path = path;
     }
     
-    private void executeTask() {
+    private void executeTask(File file) {
         try {
             
-            JobExecution execution = jobLauncher.run(job, new JobParameters());
+//            Map<String, JobParameter> map = new HashMap<>();
+//            map.put("input.file", new JobParameter(file.getAbsolutePath()));
+            
+            //final JobParameters jobParameters = new JobParameters(map);
+            //final JobParameters jobParameters = new JobParameters();
+            
+            JobParameters jobParameters = 
+    	    new JobParametersBuilder().addString("input.file", file.getAbsolutePath()).toJobParameters();
+            
+            JobExecution execution = jobLauncher.run(job, jobParameters);
             System.out.println("Exit Status : " + execution.getStatus());
             
         } catch (Exception e) {
