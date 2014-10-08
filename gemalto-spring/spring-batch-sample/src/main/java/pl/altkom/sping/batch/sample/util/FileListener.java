@@ -11,6 +11,7 @@ import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.Map;
 import org.apache.log4j.Logger;
+import org.springframework.batch.core.BatchStatus;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobExecution;
 import org.springframework.batch.core.JobParameter;
@@ -46,7 +47,7 @@ public class FileListener {
             for(File f : files) {
                 System.out.println(f);
                 executeTask(f);
-                f.delete();
+                
             }
             
             return true;
@@ -77,6 +78,11 @@ public class FileListener {
             
             JobExecution execution = jobLauncher.run(job, jobParameters);
             System.out.println("Exit Status : " + execution.getStatus());
+            
+            if(execution.getStatus().equals(BatchStatus.COMPLETED)) {
+                file.delete();
+            }
+            
             
         } catch (Exception e) {
             logger.error("błąd wykonywania zadania", e);
