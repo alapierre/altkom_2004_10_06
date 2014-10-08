@@ -25,6 +25,7 @@ public class Main {
         String[] springConfig  = 
 		{	
                         //"batch-persistance.xml",
+//                        "batch-scheduler.xml",
 			"batch-task_customer_to_db.xml",
                         
 		};
