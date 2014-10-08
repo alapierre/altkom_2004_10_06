@@ -17,5 +17,7 @@ public interface CustomerService {
     void create(Customer customer);
 
     Customer loadById(long id);
+
+    void save(Iterable<Customer> list);
     
 }

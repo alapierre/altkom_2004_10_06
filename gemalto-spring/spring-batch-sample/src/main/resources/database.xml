@@ -24,8 +24,8 @@
         <property name="password" value="sa" />
     </bean>
  
-    <bean id="transactionManager"
-              class="org.springframework.batch.support.transaction.ResourcelessTransactionManager" />
+<!--    <bean id="transactionManager"
+              class="org.springframework.batch.support.transaction.ResourcelessTransactionManager" />-->
  
     <!-- create job-meta tables automatically -->
 <!--    	<jdbc:initialize-database data-source="dataSource">-->

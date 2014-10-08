@@ -27,6 +27,8 @@
         
 ">
 
+<!--    <tx:annotation-driven transaction-manager="transactionManager-jpa"/>-->
+    
     <context:component-scan base-package="pl.altkom.gemalto.spring.services"/>
     <!-- Placeholder config -->
     <context:property-placeholder location="classpath:system.properties" />
@@ -62,7 +64,7 @@
         </property>
     </bean>
 
-    <bean id="transactionManager-jpa" class="org.springframework.orm.jpa.JpaTransactionManager">
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory" />
     </bean>
    

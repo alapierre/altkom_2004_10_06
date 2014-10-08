@@ -24,9 +24,9 @@ public class Main {
         //"batch-task_customer_to_db.xml",
         String[] springConfig  = 
 		{	
-                        //"batch-persistance.xml",
+                        "batch-persistance.xml",
 //                        "batch-scheduler.xml",
-			"batch-task_customer_to_db.xml",
+			"batch-task_customer_by_jpa.xml",
                         
 		};
  
@@ -43,7 +43,7 @@ public class Main {
 
     private static void runTask(ApplicationContext context) throws BeansException {
         JobLauncher jobLauncher = (JobLauncher) context.getBean("jobLauncher");
-        Job job = (Job) context.getBean("exportCustomers");
+        Job job = (Job) context.getBean("importCustomers");
         
         try {
             
