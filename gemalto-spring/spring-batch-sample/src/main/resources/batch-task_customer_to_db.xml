@@ -18,14 +18,19 @@
 ">
 
     <import resource="classpath:database.xml" />
+    <context:annotation-config/>
     
     <task:scheduler id="scheduler" pool-size="10"/>
     
     <task:scheduled-tasks scheduler="scheduler">
-        <task:scheduled ref="helloService" method="sendReport" cron="0/10 * * * * *"/>
+        <task:scheduled ref="fileListener" method="checkFilesExist" cron="0/10 * * * * *"/>
     </task:scheduled-tasks>
     
     <bean id="helloService" class="pl.altkom.sping.batch.sample.HelloServiceImpl"></bean>
+    
+    <bean id="fileListener" class="pl.altkom.sping.batch.sample.util.FileListener">
+        <property name="path" value="c:/input"/>
+    </bean>
     
     <!-- stored job-meta in database -->
     <bean id="jobRepository"
