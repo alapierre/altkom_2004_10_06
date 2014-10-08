@@ -21,6 +21,8 @@ public class Customer  {
 
     private Address address;
     
+    private double margin;
+    
     @Override
     public String toString() {
         return name;
@@ -48,6 +50,14 @@ public class Customer  {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public double getMargin() {
+        return margin;
+    }
+
+    public void setMargin(double margin) {
+        this.margin = margin;
     }
     
     
