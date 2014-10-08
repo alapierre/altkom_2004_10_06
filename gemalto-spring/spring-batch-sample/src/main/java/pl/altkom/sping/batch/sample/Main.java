@@ -30,7 +30,7 @@ public class Main {
 	ApplicationContext context = 
 			new ClassPathXmlApplicationContext(springConfig);
         
-        //runTask(context);
+        runTask(context);
         
  
 	System.out.println("task scheduler started");
@@ -40,7 +40,7 @@ public class Main {
 
     private static void runTask(ApplicationContext context) throws BeansException {
         JobLauncher jobLauncher = (JobLauncher) context.getBean("jobLauncher");
-        Job job = (Job) context.getBean("importCustomers");
+        Job job = (Job) context.getBean("exportCustomers");
         
         try {
             
