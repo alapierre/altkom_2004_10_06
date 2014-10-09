@@ -31,10 +31,15 @@ public class InsuranceRunner {
 	ApplicationContext context = 
 			new ClassPathXmlApplicationContext(springConfig);
         
+        long statTime = System.currentTimeMillis();
+        
         runTask(context);
         
+        long endTime = System.currentTimeMillis();
  
-	System.out.println("started");
+        long exTime = endTime - statTime;
+        
+	System.out.println("time = " + exTime);
         
         
     }
